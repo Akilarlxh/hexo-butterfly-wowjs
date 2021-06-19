@@ -34,7 +34,6 @@
   |:--|:--|:--|
   |enable|true/false|【必选】控制开关|
   |priority|number|【可选】过滤器优先级，数值越小，执行越早，默认为10，选填|
-  |enable_page|path/all|【可选】填写想要应用的页面的相对路径（即路由地址）,如根目录就填'/',分类页面就填'/categories/'。若要应用于所有页面，就填'all'，默认为all|
   |mobile|true/false|控制移动端是否启用，默认移动端禁用|
   |animateitem.class|class|【可选】添加动画类名，只支持给class添加|
   |animateitem.style|text|【可选】动画样式，具体类型参考[animate.css](https://animate.style/)|
