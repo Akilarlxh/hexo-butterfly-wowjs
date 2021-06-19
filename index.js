@@ -18,8 +18,7 @@ hexo.extend.filter.register('after_generate', function (locals) {
     mobile: config.mobile ? config.mobile : false
   }
   // 渲染页面
-  const wowjs_html = pug.renderFile(path.join(__dirname, './lib/html.pug'),data);
-  console.log(wowjs_html);
+  const wowjs_html = pug.renderFile(path.join(__dirname, './lib/html.pug'),data)
   //cdn资源声明
     //样式资源
   const css_text = data.mobile ? `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">` : `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='screen'">`;
