@@ -16,7 +16,6 @@
   wowjs:
     enable: true #控制动画开关。true是打开，false是关闭
     priority: 10 #过滤器优先级
-    enable_page: all
     mobile: false #移动端是否启用，默认移动端禁用
     animateitem:
       - class: recent-post-item #必填项，需要添加动画的元素的class
