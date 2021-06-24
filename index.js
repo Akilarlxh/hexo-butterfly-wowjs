@@ -4,9 +4,7 @@ const pug = require('pug')
 const path = require('path')
 const urlFor = require('hexo-util').url_for.bind(hexo)
 const util = require('hexo-util')
-// 过滤器优先级，priority 值越低，过滤器会越早执行，默认priority是10。
-const pre_priority = hexo.config.wowjs.priority ? hexo.config.wowjs.priority :  hexo.theme.config.wowjs.priority
-const priority = pre_priority ? pre_priority : 10
+
 hexo.extend.filter.register('after_generate', function (locals) {
   // 首先获取整体的配置项名称
   const config = hexo.config.wowjs ? hexo.config.wowjs : hexo.theme.config.wowjs
@@ -33,7 +31,14 @@ hexo.extend.filter.register('after_generate', function (locals) {
   // 注入样式资源
   hexo.extend.injector.register('head_end', css_text, "default");
 
-},priority)
+},
+hexo.extend.helper.register('priority', function(){
+  // 过滤器优先级，priority 值越低，过滤器会越早执行，默认priority是10
+  const pre_priority = hexo.config.electric_clock.priority ?  hexo.config.electric_clock.priority : hexo.theme.config.electric_clock.priority
+  const priority = pre_priority ? pre_priority : 10
+  return priority
+})
+)
 
 // 附赠wowjs外挂标签
 function wow (args, content) {
