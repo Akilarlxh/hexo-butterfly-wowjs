@@ -13,15 +13,19 @@ hexo.extend.filter.register('after_generate', function (locals) {
   // 集体声明配置项
   const data = {
     animateitem: config.animateitem,
-    mobile: config.mobile ? config.mobile : false
+    mobile: config.mobile ? config.mobile : false,
+    animate_css: config.animate_css ? urlFor(config.animate_css) : "https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css",
+    wow_js: config.wow_js ? urlFor(config.wow_js) : "https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow.min.js",
+    wow_init_js: config.wow_init_js ? urlFor(config.wow_init_js) : "https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow_init.js"
+
   }
   // 渲染页面
   const wowjs_html = pug.renderFile(path.join(__dirname, './lib/html.pug'),data)
   //cdn资源声明
     //样式资源
-  const css_text = data.mobile ? `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">` : `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='screen'">`;
+  const css_text = data.mobile ? `<link rel="stylesheet" href="${data.animate_css}" media="print" onload="this.media='all'">` : `<link rel="stylesheet" href="${data.animate_css}" media="print" onload="this.media='screen'">`;
     //脚本资源
-  const js_text = `<script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs/lib/wow_init.min.js"></script>`;
+  const js_text = `<script defer src="${data.wow_js}"></script><script defer src="${data.wow_init_js}"></script>`;
 
   // 注入用户脚本
   // 此处利用挂载容器实现了二级注入

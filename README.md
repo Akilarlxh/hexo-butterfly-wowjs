@@ -26,6 +26,9 @@
         iteration: 2 #选填项，动画重复的次数
       - class: card-widget
         style: animate__zoomIn
+    animate_css: https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css
+    wow_js: https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow.min.js
+    wow_init_js: https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow_init.js
   ```
 3. 参数释义
 
@@ -40,6 +43,9 @@
   |animateitem.delay|time,单位为s或ms|【可选】动画开始的延迟时间，单位可以是ms也可以是s。例如3s，700ms。|
   |animateitem.offset|number,单位为px|【可选】开始动画的距离（相对浏览器底部）。|
   |animateitem.iteration|number,单位为s或ms|【可选】动画重复的次数|
+  |animate_css|URL|【可选】animate.css的CDN链接,默认为`https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css`|
+  |wow_js|URL|【可选】wow.min.js的CDN链接,默认为`https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow.min.js`|
+  |wow_init_js|URL|【可选】wow_init.js的CDN链接,默认为`https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow_init.js`|
 
 4. 更多动画样式可以查看[animate.css](https://animate.style/)参考文档。
 
